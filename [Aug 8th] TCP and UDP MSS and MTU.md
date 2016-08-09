@@ -1,14 +1,18 @@
 There are 2 concepts in TCP/IP protocol stack: MSS and MTU.
 
-To TCP, MTU(Max Transmission Unit) is the max length of the data package, MSS(Max Segment Size) is max data segment which can be transmitted by it. 
+To TCP, MTU(Max Transmission Unit) is the max protocol data unit that the layer can pass onwards. It is decided by the Standards(e.g. Ethernet) or Systems(e.g. P2P serial links).
+
+MSS(Max Segment Size) is max data segment which can be transmitted by it. 
+
 In most cases, both sides will negotiate the MSS for better transport performance. MSS is always the same with MTU when realizing TCP protocol.
+
 It's value is 1460 after reducing the IP header for 20bytes and TCP header for 20bytes. The max MSS is the smaller one of both sides. 
 
 Different transportation media has different MTU, e.g. IP -> 65535, Ethernet -> 1500, PPPoE -> 1492
 
 In some ideal way, MSS is the max data size which will not be divided in IP protocol. 
 
-To IP, the size of IP package depends on MTU, the larger package will lead a hgiher transmit speed in theoratical condition. But in fact, PPPoE set MTU to 1492, Ethernet set MTU 1500 at the same time 576bytes in Internet. 
+To IP, the size of IP package depends on MTU, the larger package will lead a hgiher transmit speed in theoratical condition. But in fact, larger MTU will cause greater delay and be more problematic. So PPPoE set MTU to 1492, Ethernet set MTU 1500 at the same time 576bytes in Internet. 
 
 To UDP, the max length of the data package is 65535 which will be 65515 while 20 is reduced for the package header.
 
