@@ -16,8 +16,11 @@ Different transportation media has different MTU, e.g. IP -> 65535, Ethernet -> 
 
 In some ideal way, MSS is the max data size which will not be divided in IP protocol. 
 
+The size of IP package depends on MTU, the larger package will lead a hgiher transmit speed in theoratical condition. But in fact, larger MTU will cause greater delay and be more problematic. So PPPoE set MTU to 1492, Ethernet set MTU 1500 at the same time 576bytes in Internet. 
+
+It is always not the same MTU on different on the link. IP allows fragmentation: divide datagram into pieces. This overcome the problem but lead to other issues at the meanwhile.
+
 #2#
-To IP, the size of IP package depends on MTU, the larger package will lead a hgiher transmit speed in theoratical condition. But in fact, larger MTU will cause greater delay and be more problematic. So PPPoE set MTU to 1492, Ethernet set MTU 1500 at the same time 576bytes in Internet. 
 
 To UDP, the max length of the data package is 65535 which will be 65515 while 20 is reduced for the package header.
 
