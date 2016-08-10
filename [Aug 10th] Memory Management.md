@@ -1,6 +1,7 @@
 1. Logical Address --> Linear Address --> Physical Address
        
-                   MMU             Page Unit
+               Segment Unit        Page Unit
+                   MMU ( Memory Management Unit)
                   
 2. Segment and Page in memory
 
