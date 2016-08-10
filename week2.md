@@ -10,7 +10,9 @@
 并行可以以一下两种模式来实现：
 
 A. Blocks --> worker1 --> Factory
+
    Blocks --> worker2 --> Factory
+   
    Blocks --> worker3 --> Factory
 
 B. 
