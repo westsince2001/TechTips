@@ -2,7 +2,7 @@
 
 需要安装：
 
-* Go pkg
+* Go SDK
 * Go Plugin
 * Vim Emulation
 
@@ -72,7 +72,7 @@ Preferences -> Plugins -> Browse Repositories
 
 注意：必须启用插件Gradle
 
-*这里有些问题*
+TODO: *这里有些问题*
 
 设置结束就可以开始编译插件包了: Build --> Prepare Plugin Module "my-go-plugin-test" For Deployment 
 
