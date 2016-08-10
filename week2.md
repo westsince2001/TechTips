@@ -12,6 +12,7 @@
 A. Blocks --> worker1 --> Factory
    Blocks --> worker2 --> Factory
    Blocks --> worker3 --> Factory
+
 B. 
    Blocks --> worker1 --> Transfer --> worker2 -- Transfer --> worker3 --> Factory
   
