@@ -64,13 +64,15 @@ Preferences -> Plugins -> Browse Repositories
 
 ![](https://github.com/maxwell92/TechTips/blob/master/pics/modulenext.png)
 
+这里如果是导入已有的Module(即下载的这个包)，在Build 里不会出现Prepare Plugin Module xxx For Deployment的选项，只有自己新建了Module才会
+
 然后在Modules里设置Dependencies和Paths. 
 
 ![](https://github.com/maxwell92/TechTips/blob/master/pics/moduledepedent.png)
 
 ![](https://github.com/maxwell92/TechTips/blob/master/pics/modulepath.png)
 
-注意：必须启用插件Gradle
+注意：必须启用插件Gradle，还可能需要一个org.idea.grammar?的包(这个包可以从官网下载)
 
 TODO: *这里有些问题*
 
@@ -79,6 +81,9 @@ TODO: *这里有些问题*
 ![](https://github.com/maxwell92/TechTips/blob/master/pics/build.png)
 
 待编译成功后，可以再从上面的Install plugin from disk进行添加，添加并Apply后要重启IntelliJ，
+
+TODO: *这里可以成功编译和生成插件jar包，但是导入以后并不能生效，应该还是插件配置有问题*
+
 
 ### 3. 为Intelli J Idea CE安装Vim模拟器
 
