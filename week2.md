@@ -28,4 +28,4 @@
 
    2: "/foo/bar" --> ""
 
-4. http长连接和短连接
+4. session, Web Storage, SessionStorage, LocalStorage, cookies
