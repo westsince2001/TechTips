@@ -9,12 +9,19 @@
 这两个概念的差别非常微妙，从计算机的角度来讲，单核系统不存在并行，并发。而多核系统可以并发，也可以并行。
 并行可以以一下两种模式来实现：
 
-A. Blocks --> worker1 --> Factory
+   A.
+   Blocks --> worker1 --> Factory
 
    Blocks --> worker2 --> Factory
    
    Blocks --> worker3 --> Factory
 
-B. 
+   B. 
    Blocks --> worker1 --> Transfer --> worker2 -- Transfer --> worker3 --> Factory
   
+  
+3. Stripslashes用于处理url或uri中的斜线。在kataras/iris里有个StaticWeb(request_url_path, system_directory, stripslashes_level)方法，它的第三个参数就是用来设置Stripslashes的等级，。示意如下：
+ 
+   0: "/foo/bar" --> "/foo/bar"
+   1: "/foo/bar" --> "/bar"
+   2: "/foo/bar" --> ""
