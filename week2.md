@@ -29,3 +29,18 @@
    2: "/foo/bar" --> ""
 
 4. session, Web Storage, SessionStorage, LocalStorage, cookies
+
+
+5. 10个性能测试工具
+  * uptime
+  * dmesg | tail
+  * vmstat 1
+  * mpstat -P ALL 1
+  * pidstat 1
+  * iostat -xz 1
+  * free -m
+  * sar -n DEV 1
+  * sar -n TCP, ETCP 1
+  * top
+  
+mpstat pidstat 需要安装sysstat [](http://mp.weixin.qq.com/s?__biz=MzAwNjY4NTQ4MA==&mid=400797122&idx=1&sn=b73ba049be8699eab97d58792a68676d&scene=23&srcid=0804fUgBWj9NmVEeiL3EKJUg#rd)
