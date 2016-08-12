@@ -23,5 +23,9 @@
 3. Stripslashes用于处理url或uri中的斜线。在kataras/iris里有个StaticWeb(request_url_path, system_directory, stripslashes_level)方法，它的第三个参数就是用来设置Stripslashes的等级，。示意如下：
  
    0: "/foo/bar" --> "/foo/bar"
+
    1: "/foo/bar" --> "/bar"
+
    2: "/foo/bar" --> ""
+
+4. http长连接和短连接
