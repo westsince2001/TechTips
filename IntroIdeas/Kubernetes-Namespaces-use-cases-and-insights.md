@@ -117,13 +117,13 @@ Kubernetes中的很多概念都可以清晰地表示为RESTful API中的“对�
 Docker通过Linux内核的Namespace机制完成了资源的隔离，包括：
 
 | Namespace | 系统调用参数  | 隔离内容 |
-|: ------- :|:-----------:|:-------:|
-|UTS     | CLONE_NEWUTS | 主机名与域名
-|IPC     | CLONE_NEWIPC | 信号量、消息队列和共享内存
-|PID     | CLONE_NEWPID | 进程号
-|Network | CLONE_NEWNET | 网络设备、网络栈、端口等
-|Mount   | CLONE_NEWNS  | 挂载点（文件系统）
-|User    | CLONE_NEWUSER| 用户和用户组
+|:---------:|:-----------:|:-------:|
+| UTS       | CLONE_NEWUTS | 主机名与域名 |
+| IPC       | CLONE_NEWIPC | 信号量、消息队列和共享内存 |
+| PID       | CLONE_NEWPID | 进程号 |
+| Network   | CLONE_NEWNET | 网络设备、网络栈、端口等 |
+| Mount     | CLONE_NEWNS  | 挂载点（文件系统） |
+| User      | CLONE_NEWUSER| 用户和用户组 |
 
 Kubnernetes通过kubectl get ns查看集群现有的命名空间，通过kubectl create ns "名称"来创建新的命名空间。具体的类型定义戳[这里](https://godoc.org/k8s.io/kubernetes/pkg/api#Namespace)。
 
