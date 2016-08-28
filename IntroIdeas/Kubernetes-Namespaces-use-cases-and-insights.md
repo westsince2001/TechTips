@@ -4,7 +4,7 @@
 ```
 *谁在一垒？什么是二垒？三垒我不知道。*
 
---《[谁在一垒](https://www.youtube.com/watch?v=kTcRRaXV-fg)》 by Abbott and Costello
+--《谁在一垒》 by Abbott and Costello
 ```
 （译者注：《谁在一垒》是美国相声界的经典作品。用在此处为了说明命名的重要性。）
 
