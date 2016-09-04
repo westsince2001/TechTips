@@ -173,7 +173,7 @@ type Logger struct {
     buf []byte
 }
 ```
-它表示一个活动的日志对象，给io.Writer生成多行输出。每次记录都简单地调用io.Writer的writer方法。一个Logger可以被多个goroutines同步执行。
+它表示一个活动的日志对象，给io.Writer生成多行输出。每次记录都简单地调用io.Writer的write方法。一个Logger可以被多个goroutines同步执行。
 
 在Logger的定义里，其中：
 
