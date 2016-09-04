@@ -11,7 +11,7 @@
 ![](https://github.com/maxwell92/TechTips/blob/master/MTalking/pics/varlog2.png)
 常见的Apache服务器日志如下：
 
-```javascript
+```bash
 Apache
 1. access.log
 127.0.0.1 - - [19/Jul/2016:16:50:35 +0800] "GET / HTTP/1.0" 200 11783 "-" "check_http/v2053 (nagios-plugins 1.4.13)"
@@ -51,7 +51,7 @@ Apache
 ----------
 利用Golang的log包提供的Println()方法可以很快地打印出来一条日志：
 
-```javascript
+```bash
 2016/09/04 18:09:41 Hello World from log pkg
 ```
 它的构成相当简单，前面是事件发生的时间，后面是事件记录。
@@ -61,12 +61,12 @@ Apache
 log包里提供了多种格式化日志输出方法：Printf()、Fatalf()、Panicf()。
 
 Fatalf()的输出如下：
-```javascript
+```bash
 2016/09/04 18:39:45 It's Fatal
 exit status 1
 ```
 Panicf()的输出如下：
-```javascript
+```bash
 panic: It's Fatal
 goroutine 1 [running]:
 panic(0x954e0, 0x4201ae0a0)
@@ -82,11 +82,11 @@ exit status 2
 
 最后log包还可以自定义日志前缀：
 借助于SetPrefix()方法，
-```javascript
+```bash
 [Custom Prefix] 2016/09/04 18:45:18 Hello World from log pkg
 ```
 和借助于SetFlags()方法修改默认的前缀为打印文件及行号：
-```javascript
+```bash
 log2.go:7: Hello World from log pkg
 ```
 
@@ -240,6 +240,7 @@ func (l *Logger) Printf(format string, v ...interface{}) {}
 func (l *Logger) Println(v ...interface{}) {}
 ```
 相比Print，Fatal仅比它多了os.Exit(1)调用。
+
 ```javascript
 func (l *Logger) Fatal(v ...interface{}) {
     ...
