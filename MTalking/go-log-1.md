@@ -288,4 +288,6 @@ Panic()里调用的panic()是内建函数，定义在/usr/local/go/src/builtin/b
 [RFC 3164](https://tools.ietf.org/html/rfc3164#section-4.1)
 [Go1.7 Source Code](http://docs.studygolang.com/doc/go1.7)
 
-
+```javascript
+     func (l *Logger) SetPrefix(prefix string) {} 
+```
