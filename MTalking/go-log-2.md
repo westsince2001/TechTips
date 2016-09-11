@@ -145,13 +145,14 @@ for {
 
 >“libcontainer是Docker架构中一个使用Go语言设计实现的库，设计初衷是希望该库可以不依靠任何依赖，直接访问内核中与容器相关的API。”
 
-在libcontainerd/client_linux.go里，有```Create()```方法，它通过调用```newContainer()```创建一个新容器，在返回的时候使该容器开始运行```return container.start()```。而这个```start()```方法则定义在/libcontainerd/container_linux.go里。
+在libcontainerd/client_linux.go里，有```Create()```方法，它通过调用```newContainer()```创建一个新容器，在返回的时候使该容器开始运行```return container.start()```。而这个```start()```方法则定义在/libcontainerd/container_linux.go里。它主要执行了三个方法：
 
-```start()```主要执行了三方法：
-
- ```ctr.client.remote.apiClient.CreateContainer()```
- ```ctr.client.backend.AttachStreams()```
- ```ctr.client.backend.StateChanged()``` 
+```javascript
+  1. ctr.client.remote.apiClient.CreateContainer()
+  2. ctr.client.backend.AttachStreams()
+  3. ctr.client.backend.StateChanged()
+```
+  
 
 其中1用来创建容器，3用来标记容器状态改变，2则进行了一些特殊操作。
 
