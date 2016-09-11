@@ -149,9 +149,9 @@ for {
 
 ```start()```主要执行了三方法：
 
-1. ```ctr.client.remote.apiClient.CreateContainer()```
-2. ```ctr.client.backend.AttachStreams()```
-3. ```ctr.client.backend.StateChanged()``` 
+ ```ctr.client.remote.apiClient.CreateContainer()```
+ ```ctr.client.backend.AttachStreams()```
+ ```ctr.client.backend.StateChanged()``` 
 
 其中1用来创建容器，3用来标记容器状态改变，2则进行了一些特殊操作。
 
