@@ -153,16 +153,17 @@ for {
   3. ctr.client.backend.StateChanged()
 ```
   
-
 其中1用来创建容器，3用来标记容器状态改变，2则进行了一些特殊操作。
 
 ```AttachStreams()```的实现在/daemon/monitor.go里，它先根据容器ID获得该容器实例：
+
 ```c := daemon.containers.Get(id)```
 
 然后判断该容器存在，执行：
 ```daemon.StartLogging(c);```
 
 接着将容器的标准输出和标准错误跟Docker Daemon相连：
+
 ```javascript
     if iop.Stdout != nil {
         copyFunc(s.Stdout(), iop.Stdout)
