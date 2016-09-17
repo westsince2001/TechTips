@@ -1,5 +1,4 @@
-
-语言是如何帮助Docker容器生态圈的？
+Go语言是如何帮助Docker容器生态圈的？
 ----------
 为了编写Docker，开发者选择了Google推出的新编程语言——Go语言。在Docker虚拟化技术需要快速响应的前提下，更为传统的选择可能是C语言这样的底层语言。
 
@@ -34,7 +33,7 @@ Go语言项目于2009年启动，并且在2012年生产就绪。接着它就被�
 
 过些年就会很容易看到Go语言成为容器生态系统的核心语言。Docker和Go语言之间有着这样的协调：如果有人看到Docker项目里一个需要修补的bug，或者希望以某种方式提升软件，他们会使用Go语言，并由此加入了全球Go语言程序员的联盟。
 
-![](plan_to_use_go_in_the_future)
+![](https://github.com/maxwell92/TechTips/blob/master/IntroIdeas/pics/plan_to_use_go_in_the_future.png)
 
 ### 新旧孰好
 对Go语言的喜爱有一部分来自它将过去的静态类型编程语言的最佳实践和新的常用来搭建web应用的动态类型语言进行了整合。
@@ -63,5 +62,4 @@ Go同样被设计为程序员友好，所以程序员可以通过简单的一行
 原文链接：[How the Go programming language helps docker and the container ecosystem](http://thenewstack.io/ebookseries/)
 
 ### 译者说
-
 Go语言随着Docker等技术的火热也在持续升温，正如文中所说，Docker、Kubernetes社区的活跃和Go语言的社区的活跃密不可分。同时，借助于Docker和Kubernetes的开放API，使用Go语言编写程序管理容器变得轻而易举。除此之外，Go语言还有很多优秀的开源项目，具体可以参见[Awesome-go](https://github.com/avelino/awesome-go)，拥有15,010颗星的该项目下面汇集了众多各个方向的Go语言项目。Go语言作为一门年轻的语言，有它出彩的地方，同时也免不了还有很多瑕疵。译者认为语言之争没有终点，每种语言都如同一门兵器，面对不同的“战役”、面对不同的“敌人”，应该使出不同的“兵器”。编程语言各有所长，我们不应以使用了某种语言而感到优越，正确的姿势是应该通过编程改善了生活、提高了效率、做了有意义的事情而使我们感到骄傲。
