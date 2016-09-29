@@ -11,17 +11,17 @@ pvc--pv--存储集群--存储资源池
 本文描述了目前kubernetes中持久卷（PersistentVolume）的情况，建议先熟悉卷（Volume）的概念。
 在云环境下，存储资源管理和计算资源管理有区别。持久卷（PersistentVolume）子系统提供了API，屏蔽了底层的细节，用户和管理员不用关心存储如何提供，如何消耗等，为此，我们在kubernetes 1.4中引入了两个新的API资源(kind)：PersistentVolume和PersistentVolumeClaim 
 
-#### 持久卷 PersistentVolume (PV)
+#### 持久卷(PV)
 -----------------
 
 通常我们把存储做成集群，对外表现为一个网络存储，持久卷（PV）是这个资源中的一个片段，就像node和cluster的关系。PV是跟Volume一样是卷插件【详见[Kubernetes Volume概念](http://kubernetes.io/docs/user-guide/volumes/)】，但其生命周期不依赖任何单个的pod，底层存储实现可以是NFS，iSCSI，云存储等，都通过API对象对外暴露，对用户透明。
 
-#### 持久卷请求 PersistentVolumeClaim（PVC）
+#### 持久卷请求(PVC)
 -----------------
 
 用户通过持久卷请求（PersistentVolumeClaim－－PVC) 申请存储资源，PVC vs PV可以类比pod和node的关系，pod会消耗node的资源，PVC消耗PV的资源。pod可以申请计算资源的粒度（CPU、内存),PVC 可以申请大小、访问方式（例如mount rw一次或mount ro多次等多种方式）
 
-#### 存储级别 StorageClass
+#### 存储级别
 -----------------
 
 经过API抽象，用户可以通过PVC使用存储资源，通常用户还会关心PV的很多属性，例如对不同的应用场景需要不同的性能，仅仅提供存储大小和访问模式不能满足要求。集群管理员一方面要提供不同PV的多种属性，一方面要隐藏底层的细节，就引入了StorageClass资源。
@@ -30,7 +30,7 @@ pvc--pv--存储集群--存储资源池
 
 如果想尝试PersistentVolumeClaim，请点击[详细案例](http://kubernetes.io/docs/user-guide/persistent-volumes/walkthrough/)。
 
-### PV，PVC的生命周期
+### 生命周期
 -----------------
 
 PV是集群的资源，PVC请求资源并检查资源是否可用，PV和PVC生命周期如下：
@@ -64,7 +64,7 @@ Pods 使用Claims做为volumes。集群检查Claim，查找绑定的volume，并
 
 用户一旦有了Claim，并且被绑定，那么被绑定的PV将一直属于该用户。用户可通过在Pod volume块中包涵PersistentVolumeClaim的方式来调度Pods，并访问他们所要求的PV。
 
-##### 释放 Releasing 
+##### 释放
 -----------------
 
 当用户使用完volume后，可以从API中删除PVC对象，这样资源就可以被回收了。Claim被删除之后，volume被认为是‘释放’状态，但它还不能被其它claim使用。之前使用者的数据还保留在volume上，这个必须按一定策略进行处理。
@@ -83,16 +83,27 @@ PersistentVolume的重用策略将告诉集群在volume被释放之后该如何�
 kubernetes通过插件支持下列存储：
 
 * GCEPersistentDisk
+
 * AWSElasticBlockStore
+
 * AzureFile
+
 * FC (Fibre Channel)
+
 * NFS
+
 * iSCSI
+
 * RBD (Ceph块设备)
+
 * CephFS
+
 * Cinder (openstack的快存储)
+
 * Glusterfs
+
 * VsphereVolume
+
 * HostPath (只能用于单节点)
 
 #### 持久卷(PV)
@@ -392,7 +403,7 @@ parameters:
 
 * availability: 可用的Zone。缺省为空。
 
-#### 编写可移植配置
+#### 可移植配置
 -----------------
 
 如果你在为一个大规模集群编写配置模板或样例，并且需要持久存储，我们建议你使用以下模式：
