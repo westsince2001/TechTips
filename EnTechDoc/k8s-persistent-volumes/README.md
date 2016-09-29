@@ -415,3 +415,8 @@ parameters:
 
 * 未来我们期待更多的集群启用DefaultStorageClass，并且有各种存储可用。然而，也许没有什么storage class的名字可适用于所有集群，所以不要设置默认名字。到某个阶段后，alpha注释将失去意义，但PVC上未赋值的storageClass字段将会达到预期的效果。
 
+
+#### 原文链接
+-----------------
+
+http://kubernetes.io/docs/user-guide/persistent-volumes/
