@@ -14,7 +14,7 @@ pvc--pv--存储集群--存储资源池
 #### 持久卷 PersistentVolume (PV)
 -----------------
 
-通常我们把存储做成集群，对外表现为一个网络存储，持久卷（PV）是这个资源中的一个片段，就像node和cluster的关系。PV是跟Volume一样是卷插件【详见[kubernetes Volume概念](kubernetes.io/docs/user-guide/volumes/)】，但其生命周期不依赖任何单个的pod，底层存储实现可以是NFS，iSCSI，云存储等，都通过API对象对外暴露，对用户透明。
+通常我们把存储做成集群，对外表现为一个网络存储，持久卷（PV）是这个资源中的一个片段，就像node和cluster的关系。PV是跟Volume一样是卷插件【详见[Kubernetes Volume概念](http://kubernetes.io/docs/user-guide/volumes/)】，但其生命周期不依赖任何单个的pod，底层存储实现可以是NFS，iSCSI，云存储等，都通过API对象对外暴露，对用户透明。
 
 #### 持久卷请求 PersistentVolumeClaim（PVC）
 -----------------
