@@ -5,3 +5,4 @@ use case:
 1. SELECT JSON_EXTRACT(navList, "$.list[6].className") FROM user WHERE id=2; 
 2. UPDATE user SET navList = JSON_SET(navList, '$.list[5].className', "fa-child") WHERE id=10;
 
+Overlay Network is some kind of virtual network built on the existing underlay network such as IP network for some particular applications.
