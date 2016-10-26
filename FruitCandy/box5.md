@@ -6,3 +6,9 @@ use case:
 2. UPDATE user SET navList = JSON_SET(navList, '$.list[5].className', "fa-child") WHERE id=10;
 
 Overlay Network is some kind of virtual network built on the existing underlay network such as IP network for some particular applications.
+
+I found some extra words when I do kubectl cluster-info | cut -d " " -f6 | head -1 | cut -d "/" -f3 | cut -d ":" -f2
+like: 
+    8080^[[0m
+so What is ^[[0m ?
+It is ANSI color. Like we always could change font color in PS/2 in shell config files. like /etc/profile, etc.
