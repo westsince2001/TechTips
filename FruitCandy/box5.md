@@ -12,3 +12,8 @@ like:
     8080^[[0m
 so What is ^[[0m ?
 It is ANSI color. Like we always could change font color in PS/2 in shell config files. like /etc/profile, etc.
+
+GO build compiler will check packages in GOPATH index1 location, then index2.
+like:
+    GOPATH:/usr/local/go:/mworks
+compiler will first find packages in /usr/local/go, then mworks
