@@ -1,5 +1,5 @@
 五个热爱Kubernetes的原因
-
+![](https://github.com/maxwell92/TechTips/blob/master/IntroIdeas/pics/top5cube.png)
 [原文作者](https://twitter.com/sebgoa)
 [原文链接](https://www.linux.com/blog/top-5-reasons-love-kubernetes)
 
@@ -19,7 +19,7 @@ Kubernetes(K8s)继承自谷歌的秘密应用管理工具：Borg。我常说K8s�
 
 Borg长久以来是一个秘密，直到被[Borg论文](http://research.google.com/pubs/pub43438.html)所公布。这个系统由谷歌著名的SRE团队用来管理例如Gmail甚至GCE这样的应用。
 
-![](top_5_borg)
+![](https://github.com/maxwell92/TechTips/blob/master/IntroIdeas/pics/top5borg.png)
 
 Borg管理容器化应用的历史，其实于在Borg诞生的时候，硬件虚拟化还不可用，并且容器提供了一套打包Google数据中心的细粒度计算单元，并且提高了很多效率。
 
