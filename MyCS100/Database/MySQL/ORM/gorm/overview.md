@@ -124,8 +124,92 @@ Or:
 
 assuming `who` is the instance of data structure `Student`
 
+Sometimes we may need `FirstOrInit()`. It will find the first matched row or init one new record with given conditions
+
+* db.FirstOrInit(&Jack, User{Name:"Jack"})
+
+Note: Init() is just make one new record to the 1st parameter of `FirstOrInit()`. Use `FirstOrCreate()` if you want to insert the new record:
+
+* db.FirstOrCreate(&Jack, User{Name: "Jack"})
+
+And `Attr()` and `Assign()` helps a lot:
+
+* db.Where(Student{Name: "Jack"}).Attr("Age": 18).FirstOrInit(&b)
+* db.Where(Student{Name: "Jack"}).Assign(Student{Age: 18}).FirstOrInit(&b)
+
+But for basic operations, `SELECT` is the easier way.
+
+Select: 
+
+* db.Select("name = ?", "Jack").Find(&b)
+
+Order: 
+
+* db.Order("age desc").Find(&d).Order("age", true).Find(&e)
+
+Limit: 
+
+* db.Limit(3).Find(&f)
+* db.Limit(10).Find(&g).Limit(-1).Find(&h)
+
+Offsets:
+
+* db.Offset(2).Find(&i)
+
+Count: 
+
+* db.Where("name = ?", "Jack").Or("name = ?", "Justin").Find(&j).Count(&num1)
+
+Pluck, Seriouly I don't know what does it do ?
+
+* db.Find(&Student{}).Pluck("age", &ages)
+* db.Model(&Student{}).Pluck("name", &names)
+* db.Table("users").Pluck("name", &names)
+
+Scan:
+
+* db.Table("students").Select("name = ?", "Jack").Scan(&m)
+* db.Raw("SELECT name, age FROM students WHERE name="Jack").Scan(&n)
+
 #### Update
 
+We could create a new instance of record and using `Save()` to update all fields.
+
+* db.Save(&a)
+
+If we want to update partial fields, we could do below:
+
+update changed fields: 
+
+* db.Model(&c).Where("name = ?", "Jen").Update("name", "Jack")
+
+update multiple attr, only update those changed fields:
+
+* db.Model(&d).Update(map[string]interface{}{"name": "Sam"})
+
+update multiple attr, only update those changed and non blank fields:
+
+* db.Model(&e).Update(Users{Name: "Maxwell"})
+
+Conversely, we could use `Omit()` to update the other columns: 
+
+* db.Model(&g).Omit("name").Updates(map[string]interface{}{"name": "Jack", "age": 18})
+
+We can only update some of these columns:
+
+* db.Model(&h).UpdateColumn("name", "Jay")
+
+
 #### Delete
+
+Normal delete will actually delete the record from the table:
+
+* db.Delete(&a)
+
+But instead we got soft delete, if the record/structure has one column/member called "deleted_at", the soft delete will be triggered automatically. 
+
+* db.Delete(&a)
+
+Note that we could access this "created_at", "updated_at" and "deleted_at" column/member. Another problem is that if we delete one specific row, we create the same name(anything unique indexed) row, it will makes error.
 
 ### Advanced Usage
